@@ -26,17 +26,20 @@
         }
         subscribing = true;
         try {
-            const res = await fetch("https://mailing-list-3hzb.onrender.com/api/subscribe", {
-                method: "POST",
-                headers: {
-                    "Content-type": "application/json",
-                },
-                body: JSON.stringify({
-                    platform: "swolenormous",
-                    email,
-                    password: "80085",
-                }),
-            });
+            const res = await fetch(
+                "https://mailing-list-3hzb.onrender.com/api/subscribe",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        platform: "swolenormous",
+                        email,
+                        password: "80085",
+                    }),
+                }
+            );
             email = "";
             subscribed = true;
         } catch (err) {
@@ -542,7 +545,7 @@
             {/if}
             <button
                 on:click={formulateWorkout}
-                class=" relative sm:mx-auto group duration-200 blueShadow font-medium p-[1.5px] overflow-hidden rounded-md"
+                class=" relative mx-auto group duration-200 blueShadow font-medium p-[1.5px] overflow-hidden rounded-md"
             >
                 <div
                     class="absolute w-[110%] aspect-square top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0"
@@ -587,14 +590,14 @@
                     <div
                         class="p-4 rounded-md flex flex-col gap-4 bg-slate-950"
                     >
-                        <div class="flex items-center flex-wrap gap-x-4">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:flex-wrap gap-x-4">
                             <h4
                                 class="text-3xl hidden sm:inline sm:text-4xl md:text-5xl font-semibold text-slate-400"
                             >
                                 0{i + 1}
                             </h4>
                             <h2
-                                class="capitalize whitespace-nowrap text-lg sm:text-xl md:text-2xl flex-1 md:text-center"
+                                class="capitalize whitespace-nowrap truncate max-w-full text-lg sm:text-xl md:text-2xl flex-1 md:text-center"
                             >
                                 {exercise.name.replaceAll("_", " ")}
                             </h2>
@@ -624,7 +627,6 @@
                                         {info === "reps"
                                             ? `${exercise.unit}`
                                             : info}
-                                        {info === "tempo" ? "" : null}
                                     </h3>
                                     <p class="font-medium">{exercise[info]}</p>
                                 </div>
@@ -681,13 +683,13 @@
                             </button>
                             {#if showExerciseDescription.includes(i)}
                                 <div class="h-[1px] bg-slate-950" />
-                                <div class="flex flex-col text-sm p-2 gap-1">
+                                <ul class="flex flex-col text-sm p-2 gap-1">
                                     {#each exercise.description.split("___") as description}
-                                        <p class="">
+                                        <li class="list-disc list-inside">
                                             {description}
-                                        </p>
+                                        </li>
                                     {/each}
-                                </div>
+                                </ul>
                             {/if}
                         </div>
                     </div>
