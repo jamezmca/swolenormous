@@ -739,7 +739,7 @@
                         type="text"
                         placeholder="Your email"
                         bind:value={email}
-                        class="p-2 flex-1 bg-transparent focus:outline-none outline-none"
+                        class="p-2 flex-1 bg-transparent focus:outline-none outline-none w-full max-w-full"
                     />
                     <button
                         on:click={subscribe}
