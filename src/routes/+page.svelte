@@ -443,17 +443,7 @@
                                     <button
                                         on:click={(e) => {
                                             e.stopPropagation();
-                                            if (muscles.includes(muscle)) {
-                                                muscles = muscles.filter(
-                                                    (val) => val !== muscle
-                                                );
-                                                return;
-                                            }
-                                            if (muscles.length === 1) {
-                                                showSelectMuscles = false;
-                                                return;
-                                            }
-                                            muscles = [...muscles, muscle];
+                                            muscles = [muscle];
                                             showSelectMuscles = false;
                                         }}
                                         class={"capitalize p-2 cursor-pointer duration-200 " +
@@ -590,7 +580,9 @@
                     <div
                         class="p-4 rounded-md flex flex-col gap-4 bg-slate-950"
                     >
-                        <div class="flex flex-col sm:flex-row sm:items-center sm:flex-wrap gap-x-4">
+                        <div
+                            class="flex flex-col sm:flex-row sm:items-center sm:flex-wrap gap-x-4"
+                        >
                             <h4
                                 class="text-3xl hidden sm:inline sm:text-4xl md:text-5xl font-semibold text-slate-400"
                             >
