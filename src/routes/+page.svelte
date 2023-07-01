@@ -620,6 +620,7 @@
                                             ? `${exercise.unit}`
                                             : info}
                                     </h3>
+
                                     <p class="font-medium">{exercise[info]}</p>
                                 </div>
                             {/each}
@@ -710,6 +711,7 @@
                     </a>
                 </div>
             </div>
+            <div class="mx-auto max-w-[700px] w-fit text-slate-400 text-xs sm:text-sm text-justify px-4">*<b class="font-semibold">Note</b> - reps is the number of repetitions, rest is specified in seconds, and tempo is the number of seconds for each movement phase in the order of eccentric - isometric - concentric (or down - pause - up).</div>
         </section>
     {/if}
     <footer
