@@ -743,7 +743,7 @@ export const EXERCISES = {
         },
         unit: 'reps', //vs duration    
         muscles: ['shoulders'],
-        description: 'With dumbbells in each hand, pretend your a bird trying to flap your arms, and raise the weights up either side of your body. Ensure your elbows are always at a height height than the weights and your wrists. Slowly lower down to each side.',
+        description: 'With dumbbells in each hand, pretend your a bird trying to flap your arms, and raise the weights up either side of your body. Ensure your elbows are always at a higher height than the weights and your wrists. Slowly lower down to each side.',
         substitutes: ['unilateral cable raise', 'face pulls']
     },
     dumbbell_front_raise: {
