@@ -264,6 +264,12 @@
 <main
     class="min-h-screen relative bg-gradient-to-r from-slate-800 to-slate-950 text-white flex flex-col"
 >
+    <a
+        href="#merch"
+        class="absolute top-0 right-0 p-2 text-xs sm:text-sm text-slate-700 duration-200 cursor-pointer hover:text-blue-500 uppercase"
+    >
+        <p>Merch</p>
+    </a>
     <!-- <header
         class="py-4 sm:py-6 flex items-center justify-between max-w-[1200px] mx-auto w-full border-b border-solid border-slate-600"
     >
@@ -572,7 +578,23 @@
                     The <b class="font-semibold text-blue-400">DANGER</b> zone
                 </h1>
             </div>
-
+            <div
+                class="mx-auto max-w-[700px] w-fit text-slate-400 text-xs sm:text-sm text-justify px-4"
+            >
+                *<b class="font-semibold">Note</b> -
+                <span class="text-blue-400">reps</span>
+                is the number of repetitions,
+                <span class="text-blue-400">rest</span>
+                is specified in seconds, and
+                <span class="text-blue-400">tempo</span>
+                is the number of seconds for each movement phase in the order of
+                eccentric - isometric - concentric (or down - pause - up).
+                <br /><br />For
+                <span class="text-blue-400">weight selection</span>, choose a
+                weight that allows you to complete the repetitions with minimal
+                sacrifice to form.
+                <br /><br />Happy lifting!
+            </div>
             <div
                 class="flex flex-col gap-4 sm:gap-6 md:gap-8 max-w-[900px] w-full mx-auto px-4"
             >
@@ -711,25 +733,57 @@
                     </a>
                 </div>
             </div>
-            <div class="mx-auto max-w-[700px] w-fit text-slate-400 text-xs sm:text-sm text-justify px-4">*<b class="font-semibold">Note</b> - reps is the number of repetitions, rest is specified in seconds, and tempo is the number of seconds for each movement phase in the order of eccentric - isometric - concentric (or down - pause - up). <br/><br/>For weight selection, choose a weight that allows you to complete the repetitions with minimal sacrifice to form. <br/><br/>Happy lifting! </div>
         </section>
     {/if}
+
+    <div
+        id="merch"
+        class="flex flex-col text-center px-4 sm:gap-1 py-10 sm:py-14 md:py-20 md:gap-2 bg-slate-950"
+    >
+        <div
+            class="flex items-stretch sm:grid sm:grid-cols-2 snap-x snap-mandatory overflow-auto sm:overflow-none gap-3 sm:gap-4 w-full max-w-[600px] mx-auto"
+        >
+            <a
+                href={"https://www.teepublic.com/t-shirt/47312139-its-time-to-get-swolenormous-dark"}
+                target="_blank"
+                class="cursor-pointer w-full shrink-0 snap-center overflow-hidden"
+            >
+                <img
+                    src="https://i.imgur.com/0zZCaZt.png"
+                    alt="dark-tshirt"
+                    class="w-full object-cover sm:hover:scale-[1.05]"
+                />
+            </a>
+            <a
+                href={"https://www.teepublic.com/t-shirt/47312141-its-time-to-get-swolenormous"}
+                target="_blank"
+                class="cursor-pointer w-full shrink-0 snap-center overflow-hidden"
+            >
+                <img
+                    src="https://i.imgur.com/zbspSDk.png"
+                    alt="dark-tshirt"
+                    class="w-full object-cover sm:hover:scale-[1.05]"
+                />
+            </a>
+        </div>
+    </div>
     <footer
-        class="p-4 sm:p-6 py-16 sm:py-24 md:py-32 flex flex-col justify-center items-center gap-6 border-t border-solid border-blue-950"
+        class="p-4 sm:p-6 py-16 sm:py-24 md:py-32 flex flex-col justify-center items-center gap-4 border-t border-solid border-blue-950"
     >
         <!-- <div class="" -->
-        <div class="flex flex-col gap-6 w-fit mx-auto max-w-full">
-            <p class="rounded text-center">
+        <div class="flex flex-col gap-10 w-fit max-w-[600px] mx-auto">
+            <!-- <p class="rounded text-center">
                 Hi! I'm <b class="text-blue-400 font-medium">James</b>. This is
                 where I make stuff on the web. Obligatory links:
-            </p>
+            </p> -->
+
             <div class="flex flex-col gap-2 w-full">
                 <div class="flex items-center gap-2 mx-auto">
                     <p class="text-center font-light">Get new posts</p>
-                    <i class="fa-regular fa-envelope" />
+                    <!-- <i class="fa-regular fa-envelope" /> -->
                 </div>
                 <div
-                    class="flex items-stretch rounded text-sm sm:text-base border border-blue-400 focus-within:border-blue-600 duration-200"
+                    class="flex items-stretch rounded-md border-[1.5px] border-blue-400 focus-within:border-blue-600 duration-200"
                 >
                     <input
                         type="text"
@@ -739,7 +793,7 @@
                     />
                     <button
                         on:click={subscribe}
-                        class="grid place-items-center px-2 sm:px-4 duration-200 hover:text-blue-400 relative"
+                        class="grid place-items-center px-2 duration-200 hover:text-blue-400 relative"
                     >
                         {#if subscribing}
                             <div
@@ -766,37 +820,19 @@
                     </button>
                 </div>
             </div>
-            <div class="flex flex-col gap-2 w-full">
-                <div class="flex items-center gap-2 mx-auto">
-                    <p class="text-center font-light">All my links</p>
-                    <i class="fa-solid fa-link" />
-                </div>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
-                    <a
-                        href={"https://www.youtube.com/smoljames"}
-                        target="_blank"
-                        class="flex items-center justify-center bg-slate-950 cursor-pointer duration-200 text-sm gap-2 p-2 sm:p-3 rounded border border-blue-400 border-solid blueShadow"
-                    >
-                        <p>Youtube</p>
-                        <i class="fa-brands fa-youtube" />
-                    </a>
-                    <a
-                        href={"https://www.smoljames.com"}
-                        target="_blank"
-                        class="flex items-center justify-center bg-slate-950 cursor-pointer duration-200 text-sm gap-2 p-2 sm:p-3 rounded border border-blue-400 border-solid blueShadow"
-                    >
-                        <p>Smoljames</p>
-                        <i class="fa-regular fa-user" />
-                    </a>
-                    <a
-                        href={"https://bmc.link/smoljames"}
-                        target="_blank"
-                        class="flex items-center justify-center bg-slate-950 cursor-pointer duration-200 text-sm gap-2 p-2 sm:p-3 rounded border border-blue-400 border-solid blueShadow col-span-2 sm:col-span-1"
-                    >
-                        <p>Buy me a coffee</p>
-                        <i class="fa-solid fa-mug-hot" />
-                    </a>
-                </div>
+            <div
+                class="flex flex-col w-fit mx-auto items-center justify-center py-2 gap-2"
+            >
+                <p>By</p>
+                <a
+                    href="https://smoljames.com"
+                    target="_blank"
+                    class=" font-semibold text-5xl sm:hover:scale-110 z-10 w-fit flex items-center justify-center rounded-lg"
+                >
+                    <p>
+                        Smol<b class="font-semibold text-blue-400">james</b>
+                    </p>
+                </a>
             </div>
         </div>
     </footer>
