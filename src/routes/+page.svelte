@@ -1,6 +1,7 @@
 <script>
     import { onMount } from "svelte";
     import { WORKOUTS, SCHEMES, EXERCISES, TEMPOS } from "../utils/swoldier";
+    import { clickOutside } from "../utils/clickOutside";
 
     let workout;
     let muscles = [];
@@ -18,6 +19,13 @@
     function handleOnChange(event) {
         console.log(event.target.value);
         //save value to firestore
+    }
+
+    function handleClickOutside(event) {
+        if (!showSelectMuscles) {
+            return;
+        }
+        showSelectMuscles = false
     }
 
     async function subscribe() {
@@ -386,6 +394,8 @@
                     Select the muscles judged for annihilation.
                 </p>
                 <button
+                    use:clickOutside
+                    on:click_outside={handleClickOutside}
                     on:click={() => {
                         if (!workout) {
                             return;
