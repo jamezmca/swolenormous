@@ -751,9 +751,11 @@
         class="flex flex-col text-center px-4 gap-6 sm:gap-10 py-10 sm:py-14 md:py-20 bg-slate-950"
     >
         <div
-            class="flex flex-col text-center sm:gap-1 py-10  md:gap-2 bg-slate-950"
+            class="flex flex-col text-center sm:gap-1 py-10 md:gap-2 bg-slate-950"
         >
-            <p class="uppercase font-medium text-lg">Look fly while you train</p>
+            <p class="uppercase font-medium text-lg">
+                Look fly while you train
+            </p>
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold">
                 Tasteful <b class="font-semibold text-blue-400">GYM</b> tees
             </h1>
@@ -785,73 +787,93 @@
             </a>
         </div>
     </div>
+    <div
+        class="flex flex-col gap-2 sm:gap-4 text-sm sm:text-base p-4 bg-slate-950 w-full items-center justify-center border-solid border-slate-950"
+    >
+        <div class="flex flex-col gap-1">
+            <div class="flex items-center justify-center gap-2">
+                <p class="text-center">Newsletter</p>
+                <i class="fa-regular fa-envelope" />
+                <!-- <i class="fa-regular fa-envelope" /> -->
+            </div>
+            <div class="flex text-xs sm:text-sm text-slate-400">
+                <p>If you want a community, let me know!</p>
+            </div>
+        </div>
+        <div
+            class="flex items-stretch w-full sm:w-96 sm:mx-auto rounded-md border border-blue-900 hover:border-blue-800 focus-within:border-blue-500 duration-200 text-sm"
+        >
+            <input
+                type="text"
+                placeholder="Your email"
+                bind:value={email}
+                class="p-2 flex-1 bg-transparent focus:outline-none outline-none w-full max-w-full"
+            />
+            <button
+                on:click={subscribe}
+                class="grid place-items-center px-2 duration-200 hover:text-blue-400 relative"
+            >
+                {#if subscribing}
+                    <div
+                        class="absolute inset-0 rounded-md flex items-center justify-end pr-2"
+                    >
+                        <i class="fa-solid fa-spinner animate-spin" />
+                    </div>
+                {/if}
+                {#if subscribed}
+                    <div
+                        class="absolute inset-0 rounded-md flex items-center justify-end pr-2"
+                    >
+                        <i class="fa-solid fa-check text-green-400" />
+                    </div>
+                {/if}
+                <p
+                    class={"duration-200 " +
+                        (subscribing || subscribed
+                            ? " opacity-0"
+                            : "opacity-100")}
+                >
+                    <i class="fa-regular fa-paper-plane" />
+                </p>
+            </button>
+        </div>
+    </div>
+
     <footer
-        class="p-4 sm:p-6 py-16 sm:py-24 md:py-32 flex flex-col justify-center items-center gap-4 border-t border-solid border-blue-950"
+        class=" py-16 sm:pb-24 md:pb-32 gap-6 bg-slate-950 sm:gap-10 md:gap-14 flex flex-col justify-center items-center gap-4"
     >
         <!-- <div class="" -->
-        <div class="flex flex-col gap-10 w-fit max-w-[600px] mx-auto">
-            <!-- <p class="rounded text-center">
+        <!-- <p class="rounded text-center">
                 Hi! I'm <b class="text-blue-400 font-medium">James</b>. This is
                 where I make stuff on the web. Obligatory links:
             </p> -->
 
-            <div class="flex flex-col gap-2 w-full">
-                <div class="flex items-center gap-2 mx-auto">
-                    <p class="text-center font-light">Get new posts</p>
-                    <!-- <i class="fa-regular fa-envelope" /> -->
-                </div>
-                <div
-                    class="flex items-stretch rounded-md border-[1.5px] border-blue-400 focus-within:border-blue-600 duration-200"
-                >
-                    <input
-                        type="text"
-                        placeholder="Your email"
-                        bind:value={email}
-                        class="p-2 flex-1 bg-transparent focus:outline-none outline-none w-full max-w-full"
-                    />
-                    <button
-                        on:click={subscribe}
-                        class="grid place-items-center px-2 duration-200 hover:text-blue-400 relative"
-                    >
-                        {#if subscribing}
-                            <div
-                                class="absolute inset-0 rounded-md flex items-center justify-end pr-2"
-                            >
-                                <i class="fa-solid fa-spinner animate-spin" />
-                            </div>
-                        {/if}
-                        {#if subscribed}
-                            <div
-                                class="absolute inset-0 rounded-md flex items-center justify-end pr-2"
-                            >
-                                <i class="fa-solid fa-check text-green-400" />
-                            </div>
-                        {/if}
-                        <p
-                            class={"duration-200 " +
-                                (subscribing || subscribed
-                                    ? " opacity-0"
-                                    : "opacity-100")}
-                        >
-                            Subscribe
-                        </p>
-                    </button>
-                </div>
-            </div>
+        <div
+            class="flex flex-col gap-6 sm:gap-10 md:gap-16 w-full px-4 sm:px-6"
+        >
             <div
-                class="flex flex-col w-fit mx-auto items-center justify-center py-2 gap-2"
+                class="grid place-items-center aspect-square rounded-full overflow-hidden shadow max-w-[300px] w-full mx-auto"
             >
-                <p>By</p>
-                <a
-                    href="https://smoljames.com"
-                    target="_blank"
-                    class=" font-semibold text-5xl sm:hover:scale-110 z-10 w-fit flex items-center justify-center rounded-lg"
-                >
-                    <p>
-                        Smol<b class="font-semibold text-blue-400">james</b>
-                    </p>
-                </a>
+                <img src="/profile.jpeg" alt="Lord of swolenormity" />
+            </div>
+            <div class="flex flex-col gap-2 sm:gap-4 w-full text-center">
+                <h3 class=" font-semibold text-4xl md:text-5xl uppercase z-10">
+                    Swole<span class="text-blue-400">normous</span>
+                </h3>
+                <p class="text-sm sm:text-base">
+                    A haven for aspiring colossal units.
+                </p>
+                <p class="text-sm text-slate-400">
+                    About the <a
+                        href="https://smoljames.com"
+                        target="_blank"
+                        class="text-blue-400 hover:text-blue-600"
+                        >author &rarr;</a
+                    >
+                </p>
             </div>
         </div>
+
+        <p class="text-xs sm:text-sm text-slate-400">Copyright © 2023 Swolenormous</p>
     </footer>
 </main>
