@@ -755,7 +755,7 @@
         >
             <p class="uppercase font-medium text-lg">Look fly while you train</p>
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold">
-                Unholy <b class="font-semibold text-blue-400">GYM</b> shirts
+                Tasteful <b class="font-semibold text-blue-400">GYM</b> shirts
             </h1>
         </div>
         <div
