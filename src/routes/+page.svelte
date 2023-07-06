@@ -25,7 +25,7 @@
         if (!showSelectMuscles) {
             return;
         }
-        showSelectMuscles = false
+        showSelectMuscles = false;
     }
 
     async function subscribe() {
@@ -748,8 +748,16 @@
 
     <div
         id="merch"
-        class="flex flex-col text-center px-4 sm:gap-1 py-10 sm:py-14 md:py-20 md:gap-2 bg-slate-950"
+        class="flex flex-col text-center px-4 gap-6 sm:gap-10 py-10 sm:py-14 md:py-20 bg-slate-950"
     >
+        <div
+            class="flex flex-col text-center sm:gap-1 py-10  md:gap-2 bg-slate-950"
+        >
+            <p class="uppercase font-medium text-lg">Look fly while you train</p>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold">
+                Unholy <b class="font-semibold text-blue-400">GYM</b> shirts
+            </h1>
+        </div>
         <div
             class="flex items-stretch sm:grid sm:grid-cols-2 snap-x snap-mandatory overflow-auto sm:overflow-none gap-3 sm:gap-4 w-full max-w-[600px] mx-auto"
         >
